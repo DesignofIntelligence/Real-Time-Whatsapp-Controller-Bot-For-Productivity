@@ -1,6 +1,6 @@
 # Real-Time-Whatsapp-Controller-Bot-For-Productivity
 
-A software that controls the number of times per hour whatsapp could be opened.
+A software that controls the number of times per hour whatsapp could be opened using packet sniffing, automated firewall rules, binary semaphores and threading.
 
 The software has 3 main modules running in parallel threads, The first module (packet_scapy_sniff.py) is a packet sniffer that detects the IP address of whatsapp in the incoming/outgoing packets. 
 If whatsapp was detected, a semaphore is sent to the second module, which is a counter that starts counting 60 seconds. Everytime the first module sends the semaphore, the counting gets restarted, so that the 60 seconds are counted after the last packet was sent/ received to make sure that whatsapp was closed.
