@@ -1,6 +1,7 @@
 import psutil
 import os
 
+
 def get_pid(name):
     for proc in psutil.process_iter():
         if name in proc.name():
@@ -20,6 +21,7 @@ def kill_whatsapp_process():
     p = psutil.Process(pid)
     print("Closing")
     p.terminate()
+
 
 def helper_check():
     if "helper.exe" not in [x.name() for x in psutil.process_iter()]:
